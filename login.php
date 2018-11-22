@@ -33,15 +33,6 @@
 
 	<!-- header -->
 	<header>
-		<div id="search-bar">
-			<div class="container">
-				<div class="row">
-					<form action="#" name="search" class="col-xs-12">
-						<input type="text" name="search" placeholder="Type and Hit Enter"><i id="search-close" class="fa fa-close"></i>
-					</form>
-				</div>
-			</div>
-		</div>
 		<nav  class="navigation">
 			<div class="container">
 				<div class="row">
@@ -97,16 +88,15 @@
 	<h2 class=LoginText>Form Login </h2>
 
 	<form action="" method="">
-	
-		<label><b>Username</b></label>
-		<input type="text" placeholder="Masukkan Username" name="uname" required>
+		<div class="containerL">
+			<label><b>Username</b></label>
+			<input type="text" placeholder="Masukkan Username" name="uname" required>
 
-		<label><b>Password</b></label>
-		<input type="password" placeholder="Masukkan Password" name="psw" required>
-			
-		<a href="BEVO index.html"><button>Login</button></a>
-		 <span class="psw">Belum punya akun <a href="Register.html">Register</a></span>
-
+			<label><b>Password</b></label>
+			<input type="password" placeholder="Masukkan Password" name="psw" required>
+			<a href="BEVO index.html"><input type="submit" value="Login"></a>	
+			 <span class="psw">Belum punya akun <a href="Register.html">Register</a></span>
+		</div>
 	</form>
 	<br />
 	<br />
