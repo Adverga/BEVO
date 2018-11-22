@@ -38,7 +38,7 @@ label{
 	color:#50626C;
 	text-transform: uppercase;
 }
-input[type=submit] {
+input[type=submit],input[type=password] {
     background-color: #0aaaa0;
     font-weight: bold;
 	color: white;
