@@ -96,7 +96,7 @@
 	<br/><br/>
 	<h2 class=LoginText>Form Login </h2>
 
-	<form action="" method="">
+	<form action="index.php" method="POST">
 	
 		<label><b>Username</b></label>
 		<input type="text" placeholder="Masukkan Username" name="uname" required>
