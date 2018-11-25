@@ -12,7 +12,15 @@ switch($op){
 		$password = $_POST['pass'];
 
 		if($user_controller->login($username, $password)){
-			header("Location:main.php");
+			if ($user_controller->jenis == 'admin') {
+				header("Location:viewAdmin.php");
+			}
+			if ($user_controller->jenis == 'donatur') {
+				header("Location:viewDonatur.php");
+			}
+			if ($user_controller->jenis == 'penerima') {
+				header("Location:viewPenerima.php");
+			}
 		}else header("Location:login.php?err=1");
 		break;
 	case 'logout':

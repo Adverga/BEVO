@@ -4,7 +4,9 @@
   margin:auto;
   overflow: hidden;
 }
-
+table tr td {
+   padding: 3px;
+  }
 *{
     padding: 0; margin: 0;
 }
@@ -19,15 +21,12 @@
 	margin-bottom: 12px;
     margin-top: 108px;
 }
-form {
-    font-family: arial;
+.containerL{
+	font-family: arial;
     width: 500px;
     margin: auto;
-}
-.containerL{
-	
 }	
-input[type=text], input[type=password], input[type=tel] input[type=email] {
+input[type=text] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -39,17 +38,17 @@ label{
 	color:#50626C;
 	text-transform: uppercase;
 }
-button {
+input[type=submit],input[type=password] {
     background-color: #0aaaa0;
     font-weight: bold;
 	color: white;
     padding: 14px 20px;
-    margin: 8px 0;
+    margin: 0px 0;
     border: none;
     width: 100%;
 }
 
-button:hover {
+input[type=submit]:hover {
     font-weight: bold;
 	opacity: 0.8;
 	background-color:#444 ;
