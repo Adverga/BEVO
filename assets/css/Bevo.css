@@ -11,22 +11,22 @@ table tr td {
     padding: 0; margin: 0;
 }
 .LoginText{
-	color:#50626C;
-	text-align: center;
-	font-family: arial;
-	text-transform: uppercase;
-	padding: 5px;
-	width: 490px;
-	margin: auto;
-	margin-bottom: 12px;
+  color:#50626C;
+  text-align: center;
+  font-family: arial;
+  text-transform: uppercase;
+  padding: 5px;
+  width: 490px;
+  margin: auto;
+  margin-bottom: 12px;
     margin-top: 108px;
 }
 .containerL{
-	font-family: arial;
+  font-family: arial;
     width: 500px;
     margin: auto;
-}	
-input[type=text] {
+} 
+input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -35,13 +35,13 @@ input[type=text] {
     box-sizing: border-box;
 }
 label{
-	color:#50626C;
-	text-transform: uppercase;
+  color:#50626C;
+  text-transform: uppercase;
 }
-input[type=submit],input[type=password] {
+input[type=submit] {
     background-color: #0aaaa0;
     font-weight: bold;
-	color: white;
+  color: white;
     padding: 14px 20px;
     margin: 0px 0;
     border: none;
@@ -50,8 +50,8 @@ input[type=submit],input[type=password] {
 
 input[type=submit]:hover {
     font-weight: bold;
-	opacity: 0.8;
-	background-color:#444 ;
+  opacity: 0.8;
+  background-color:#444 ;
 }
 
 .cancelbtn {
@@ -78,7 +78,7 @@ span.psw {
 
 }
 span{
-	color:#50626C;
+  color:#50626C;
 }
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
@@ -94,9 +94,9 @@ form label{
     display:inline-block; 
     position:relative; 
     line-height:30px; 
-	font-size:18px;
+  font-size:18px;
     vertical-align: top;}
-	
+  
 form .form-radio{display:none;}
 form .form-radio + label{padding-left:35px;}
 form .form-radio + label::before{

@@ -1,8 +1,7 @@
 <?php 
-$namahost = "localhost";
-$username = "admin";
-$password = "12";
-$database = "bevo";
-$conn = mysqli_connect($namahost, $username, $password) or die("Failed");
-mysqli_select_db($conn, $database) or die("Failed");
+	define('HOST','localhost');
+	define('USER','root'); //sesuaikan nama user
+	define('PASS',''); //sesuaiakan nama password
+	define('DB','bevo');//sesuaiakan naman database
+	$conn = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');
 ?>

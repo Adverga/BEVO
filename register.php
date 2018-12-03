@@ -1,17 +1,5 @@
 <?php
-	session_start();
-	session_destroy();
-	if (isset($_SESSION['user'])) {
-		if ($_SESSION['user']->jenis == 'admin') {
-			header("Location:viewAdmin.php");
-		}
-		else if ($_SESSION['user']->jenis == 'donatur') {
-			header("Location:viewDonatur.php");
-		}
-		else if ($_SESSION['user']->jenis == 'penerima'){
-			header("Location:viewPenerima.php");
-		}
-	}
+
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -19,7 +7,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>BEVO: Login </title>
+	<title>BEVO: Register </title>
 	<link rel="shortcut icon" href="assets/img/BEVO.png">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/owl-carousel/assets/owl.carousel.css">
@@ -28,17 +16,21 @@
 	<link rel="stylesheet" href="assets/css/nivo-lightbox.css">
 	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/css/style.css">
-	<link rel="stylesheet" href="assets/css/Bevo.css">
-	<style>
-	.error-text {
-		color: #f00;
-	}
-	</style>
+	<link rel="stylesheet" href="assets/css/BEVO.css">
 </head>
 <body>
 
 	<!-- header -->
 	<header>
+		<div id="search-bar">
+			<div class="container">
+				<div class="row">
+					<form action="#" name="search" class="col-xs-12">
+						<input type="text" name="search" placeholder="Type and Hit Enter"><i id="search-close" class="fa fa-close"></i>
+					</form>
+				</div>
+			</div>
+		</div>
 		<nav  class="navigation">
 			<div class="container">
 				<div class="row">
@@ -75,8 +67,7 @@
 										<ul>
 											<li><a href="BEVO index.html">Home </a></li>
 											<li><a href="Pilih Calon Penerima.html">Donasi</a></li>
-											<li><a href="Profile.html">Profil</a>
-											</li>
+											<li><a href="Profile.html">Profil</a></li>
 											<li><a href="Login.html">Login</a></li>
 										</ul>
 									</nav>
@@ -90,22 +81,54 @@
 		</nav>
 
 	</header>
-	<br/><br/>
-	<h2 class=LoginText>Form Login </h2>
+
+	<h2 class=LoginText>Form Register </h2>
 
 	<form action="index.php" method="POST">
-		<div class="containerL">
-			<label><b>Username</b></label>
-			<input type="text" placeholder="Masukkan Username" name="user" required>
-			<label><b>Password</b></label>
-			<input type="password" placeholder="Masukkan Password" name="pass" required>
-			<input type="submit" name="op" value="login"></a>	
-			<span class="psw">Belum punya akun <a href="register.php">Register</a></span>
-		</div>
+	
+		<label><b>Username</b></label>
+		<input type="text" placeholder="Masukkan Username" name="uname" required 
+		oninvalid="this.setCustomValidity('data tidak boleh kosong')" oninput="setCustomValidity('')">
+		<br/>
+		<label><b>Email</b></label><br/>
+		<input type="text" placeholder="Masukkan Email" name="email" required 
+		oninvalid="this.setCustomValidity('data tidak boleh kosong')" oninput="setCustomValidity('')">
+		<br/>
+		<label><b>Password</b></label>
+		<input type="password" placeholder="Masukkan Password" name="psw" required
+		oninvalid="this.setCustomValidity('data tidak boleh kosong')" oninput="setCustomValidity('')">
+		<br/>
+		<label><b>Jenis Member</b></label>
+		<br />
+		<input type="radio" name="member" value="Donatur" required
+		oninvalid="this.setCustomValidity('data tidak boleh kosong')" oninput="setCustomValidity('')">
+		<label for="f-option">Donatur</label>
+		<br />
+		<input type="radio" name="member" value="Calon penerima beasiswa" required
+		oninvalid="this.setCustomValidity('data tidak boleh kosong')" oninput="setCustomValidity('')">
+		<label for="f-option">Calon penerima beasiswa</label>
+		<br /><br />
+		
+		<label><b>Nomor Telepon</b></label>
+		<input type="text" placeholder="Masukkan Nomor Telephone" name="notelp" required
+		oninvalid="this.setCustomValidity('data tidak boleh kosong')" oninput="setCustomValidity('')">
+		
+		<label><b>Alamat</b></label>
+		<textarea name="Alamat" style="resize: none; width:496px; height:130px;" required 
+		oninvalid="this.setCustomValidity('data tidak boleh kosong')" oninput="setCustomValidity('')">
+		</textarea>			
+		
+		<label><b>Unggah Foto Profile</b></label>
+			<br />
+			<input type="file" name="unggahPP" required
+			oninvalid="this.setCustomValidity('data tidak boleh kosong')" oninput="setCustomValidity('')">
+			<br />	<br />	
+			<img id="gmbr" style="width:200px;height:200px" src="../assets/img/<?php echo $data['namaFile'] ?>" >		
+			<br /><br />
+		
+		<a><button type="submit" name="op" value="register">Register</button></a>
+		
 	</form>
-	<br />
-	<br />
-	<br />
 	<br />
 
 	
@@ -134,13 +157,6 @@
 	<script type="text/javascript" src="assets/js/gmaps.js"></script>
 	<script type="text/javascript" src="assets/js/plugins.js"></script>
 	<script type="text/javascript" src="assets/js/js.js"></script>
-	<script type="text/javascript">
-	function Konfirmasi() {
-		 var jawab = confirm("Anda yakin ingin keluar?")
-		 if (jawab){
-		  window.location = "BEVO index.html";
-		 }
-		}		
-	</script>    
+
 </body>
 </html>

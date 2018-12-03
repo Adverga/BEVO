@@ -2,7 +2,7 @@
 require_once('user.php');
 session_start();
 if (!isset($_SESSION['user'])) {
-	header("Location:login.php");
+	header("Location:login.php")
 }
 ?>
 <!DOCTYPE html>
@@ -39,24 +39,22 @@ if (!isset($_SESSION['user'])) {
 			<div class="container">
 				<div class="row">
 					<div class="logo-wrap col-md-3 col-xs-6">
-						<a href="Admin index.html">BEVO</a>
+						<a href="Mahasiswa index.html">BEVO</a>
 					</div>
 					<div class="menu-wrap col-md-8 ">
 						<ul class="menu">
 							<li class="active">
-								<a href="viewAdmin.php" >Home</a>
+								<a href="Mahasiswa index.html" >Home</a>
 							</li>
 							<li>
-								<a href="index.html?op=viewEditPenerima">Edit Biodata Penerima Beasiswa</a>
-							</li>
-							<li>
-								<a href="Sudah Donasi.html">Verifikasi Pembayaran</a>
+								<a href="Profile Mahasiswa.html">Profil</a>
 							</li>
 							<li>
 								<a href="#" onclick="return Konfirmasi()">Logout</a>
 							</li>
 						</ul>	
-					</div>			        
+					</div>
+					</div>					
 				</div>
 			</div>
 			
@@ -69,11 +67,9 @@ if (!isset($_SESSION['user'])) {
 								<div class="mobile-menu">
 									<nav id="mobile-nav">
 										<ul>
-											<li><a href="viewAdmin.php">Home </a></li>
-											<li><a href="Edit Penerima Beasiswa.html">Edit Biodata Penerima Beasiswa</a>
-											</li>
-											<li><a href="Sudah Donasi.html"> Verifikasi Pembayaran </a></li>
-											<li><a href="#" onclick="return Konfirmasi()">Logout</a></li>
+											<li><a href="Mahasiswa index.html">Home </a></li>
+											<li><a href="Profile Mahasiswa.html"> Profil </a></li>
+											<li><a href="index.php?op=logout" onclick="return Konfirmasi()">Logout</a></li>
 										</ul>
 									</nav>
 								</div>	
@@ -95,8 +91,9 @@ if (!isset($_SESSION['user'])) {
 					<div class="slider-content text-white">
 						<h2 class="b_faddown1 cd-headline clip is-full-width" >BEVO </h2>
 						<p class="b_faddown2">Bevo adalah sarana pendanaan yang akan menampung dana dari para volunteer yang akan ditujukan                                    
-						<br />kepada mahasiswa  kurang mampu dan tidak bisa memenuhi persyaratan dalam mendaftar beasiswa. </p>
-						<div class="slider_button b_faddown3"><a href="Sudah Donasi.html">Verifikasi Pembayaran</a></div>
+						<br /><br />kepada mahasiswa  kurang mampu dan tidak bisa memenuhi persyaratan dalam mendaftar beasiswa. <br/>
+						Untuk melihat donasi dari para donatur , mengedit profile atau menggunggah dokumen dapat melihat di Profil</p>
+						<div class="slider_button b_faddown3"><a href="Profile Mahasiswa.html">Lihat Profil</a></div>
 					</div>
 				</div>				
 			</div>
@@ -105,8 +102,9 @@ if (!isset($_SESSION['user'])) {
 					<div class="slider-content text-white">
 						<h2 class="b_faddown1 cd-headline clip is-full-width" >BEVO </h2>
 						<p class="b_faddown2">Bevo adalah sarana pendanaan yang akan menampung dana dari para volunteer yang akan ditujukan                                    
-						<br />kepada mahasiswa  kurang mampu dan tidak bisa memenuhi persyaratan dalam mendaftar beasiswa. </p>
-						<div class="slider_button b_faddown3"><a href="Sudah Donasi.html">Verifikasi Pembayaran</a></div>
+						<br /><br />kepada mahasiswa  kurang mampu dan tidak bisa memenuhi persyaratan dalam mendaftar beasiswa. <br/>
+						Untuk melihat donasi dari para donatur , mengedit profile atau menggunggah dokumen dapat melihat di Profil</p>
+						<div class="slider_button b_faddown3"><a href="Profile Mahasiswa.html">Lihat Profil</a></div>
 					</div>
 				</div>				
 			</div>
@@ -116,14 +114,34 @@ if (!isset($_SESSION['user'])) {
 					<div class="slider-content text-white">
 						<h2 class="b_faddown1 cd-headline clip is-full-width" >BEVO </h2>
 						<p class="b_faddown2">Bevo adalah sarana pendanaan yang akan menampung dana dari para volunteer yang akan ditujukan                                    
-						<br />kepada mahasiswa  kurang mampu dan tidak bisa memenuhi persyaratan dalam mendaftar beasiswa. </p>
-						<div class="slider_button b_faddown3"><a href="Sudah Donasi.html">Verifikasi Pembayaran</a></div>
-					</div>
+						<br /><br />kepada mahasiswa  kurang mampu dan tidak bisa memenuhi persyaratan dalam mendaftar beasiswa. <br/>
+						Untuk melihat donasi dari para donatur , mengedit profile atau menggunggah dokumen dapat melihat di Profil</p>
+						<div class="slider_button b_faddown3"><a href="Profile Mahasiswa.html">Lihat Profil</a></div>
 				</div>				
 			</div>				
 		</div>
 	</div>
 	<!-- basic-slider end -->	
+
+	<!-- Features -->
+	<div class="features-wrapper one">
+		<div class="container">
+			<div class="section-name one">
+				<h2>Yang Kami Lakukan</h2>
+			</div>
+			<p style="font-size:16px;>Pendidikan sangat lah penting untuk masa depan yang cerah. Saat ini masih banyak masyarakat terutama yang 
+			melanjutkan studi nya ke jenjang yang lebih tinggi terhambat dari  segi materi, financial dan lainnya. Hal itu
+			merupakan masalah yang perlu dituntaskan secara perlahan untuk mengembangkan generasi yang lebih baik. Maka dari itu,
+			aplikasi ini dapat membantu untuk menyalurkan dana dan menghubungkan dari volunteer ke calon penerima beasiswa yang 
+			nantinya dengan aplikasi BEVO. Aplikasi BEVO adalah aplikasi beasiswa dari pendanaan volunteer yang dikumpulkan 
+			untuk calon penerima beasiswa dengan target yang kurang mampu dan keterbatasan dalam belajar namun memiliki semangat
+			berjuang dilihat dari segi persyaraatan yang nantinya akan di pilih secara ketat. Pendanan itu sendiri dapat 
+			diperoleh dari donatur yang bersedia dan suka rela dalam memberi seperti materi maupun financial. Dengan adanya 
+			aplikasi BEVO ini donatur dan calon penerima beasiswa akan dapat menghubungkan dengan mudah untuk memberikan dananya
+			dengan tujuan untuk meningkatkan generasi yang berkualitas dan handal dalam kehidupan yang lebih baik.
+			</p>
+		</div>
+	</div>
 		
 	<!-- team -->
 	<div class="team-wrapper">
@@ -171,8 +189,8 @@ if (!isset($_SESSION['user'])) {
 				</div>	
 			</div>	
 		</div>	
-	</div>	
-		
+	</div>		
+	
 	<!-- Foter -->
 	<footer>
 			<div class="footer-bar">
@@ -200,9 +218,9 @@ if (!isset($_SESSION['user'])) {
 	<script type="text/javascript" src="assets/js/js.js"></script>
 	<script type="text/javascript">
 		function Konfirmasi() {
-		 var jawab = confirm("Anda yakin ingin keluar?")
+		 var jawab = confirm("Apakah anda yakin untuk Logout?")
 		 if (jawab){
-		  window.location.href="index.php?op=logout";
+		  window.location = "index.php?op=logout";
 		 }
 		}		
 		</script>       

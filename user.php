@@ -1,7 +1,5 @@
 <?php
-	include('koneksi.php');
-
-	public class User {
+	class User {
 		public $id;
 		public $nama;
 		public $email;
@@ -14,13 +12,12 @@
 		public $arr;
 		private $i;
 
-		public function __construct(){
-		}
-		function __construct($user)
+		function User($user, $jenis)
 		{
 			$this->username = $user;
+			$this->jenis = $jenis;
 		}
-		public function setDataUser($array,$foto){
+/*		public function setDataUser($array,$foto){
 			$tmp = new stdClass; 
  			$tmp-> id = $array["id"];
 			$tmp-> nama = $array["nama"];
@@ -53,6 +50,6 @@
 			$tmp-> jenis = $array["jenis"];
 			$tmp-> foto = $foto
 
-		}
+		}*/
 	}
 ?>

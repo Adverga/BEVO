@@ -62,7 +62,7 @@
 								<div class="mobile-menu">
 									<nav id="mobile-nav">
 										<ul>
-											<li><a href="Admin index.html">Home </a></li>
+											<li><a href="viewAdmin.php">Home </a></li>
 											<li><a href="#">Edit Penerima Beasiswa</a>
 											</li>
 											<li><a href="Sudah Donasi.html"> Verifikasi Pembayaran </a></li>
@@ -193,7 +193,7 @@
 	function Konfirmasi() {
 		 var jawab = confirm("Anda yakin ingin keluar?")
 		 if (jawab){
-		  window.location = "Admin index.html";
+		  header("index.php?op=logout");
 		 }
 		}		
 	</script>    
