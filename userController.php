@@ -31,13 +31,6 @@ class UserController
 		session_start();
 		session_destroy();
 	}
-/*	public function getJenis($user){
-		global $conn;
-		$QUERY = MYSQLI_QUERY($conn,"SELECT * FROM user where username = '$user'");
- 		$ROW = MYSQLI_FETCH_ASSOC($QUERY);
- 		$tmp = $ROW["jenis"];
- 		return $tmp;
-	}*/
 	public function register($username,$email,$password,$nmrHP,$alamat,$foto,$jenis){
 		if ($this->us->setRegister($username,$email,$password,$nmrHP,$alamat,$foto,$jenis)) 
 		{

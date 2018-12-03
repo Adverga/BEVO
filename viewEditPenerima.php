@@ -1,15 +1,11 @@
-<?php
-	session_start();
-	if (!isset($_SESSION['user'])) header("Location:login.php");
-
-?>
+<?php?>
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>BEVO: Halaman Profil </title>
+	<title>BEVO: Edit Biodata Penerima Beasiswa </title>
 	<link rel="shortcut icon" href="assets/img/BEVO.png">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/owl-carousel/assets/owl.carousel.css">
@@ -37,15 +33,18 @@
 			<div class="container">
 				<div class="row">
 					<div class="logo-wrap col-md-3 col-xs-6">
-						<a href="Mahasiswa index.html">BEVO</a>
+						<a href="Admin index.html">BEVO</a>
 					</div>
 					<div class="menu-wrap col-md-8 ">
 						<ul class="menu">
 							<li>
-								<a href="Mahasiswa index.html" >Home</a>
+								<a href="Admin index.html" >Home</a>
 							</li>
 							<li class="active">
-								<a href="Profile Mahasiswa.html">Profil</a>
+								<a href="#">Edit Biodata Penerima Beasiswa</a>
+							</li>
+							<li>
+								<a href="Sudah Donasi.html">Verifikasi Pembayaran</a>
 							</li>
 							<li>
 								<a href="#" onclick="return Konfirmasi()">Logout</a>
@@ -64,8 +63,10 @@
 								<div class="mobile-menu">
 									<nav id="mobile-nav">
 										<ul>
-											<li><a href="Mahasiswa index.html">Home </a></li>
-											<li><a href="Profile Mahasiswa"> Profil </a></li>
+											<li><a href="viewAdmin.php">Home </a></li>
+											<li><a href="#">Edit Penerima Beasiswa</a>
+											</li>
+											<li><a href="Sudah Donasi.html"> Verifikasi Pembayaran </a></li>
 											<li><a href="#" onclick="return Konfirmasi()">Logout</a></li>
 										</ul>
 									</nav>
@@ -79,72 +80,91 @@
 		</nav>
 
 	</header>
-	
-	<!-- about wrapper -->
-	<div class="team-wrapper">
-		<div class="container">
-			<div class="section-name one">
-				<h2>Halaman Profile</h2>
-			</div>
-						
-			<div class="col-md-6 col-sm-6 col-xs-12">							    
-				<table>
-					<tr>
-					  <div class="imgcontainer">
-						  <img src="images/03122018093322birdmage" alt="Avatar" class="avatar">
-						</div>
-					</tr>
-					<tr>
-					  <td> Nama </td>
-					  <td> : </td>
-					  <td> Ahsan </td>
-					</tr>
-					<tr>
-					  <td> Email </td>
-					  <td> : </td>
-					  <td> Ahsan@gmail.com </td>
-					</tr>
-					<tr>
-					  <td> Jenis Member </td>
-					  <td> : </td>
-					  <td> Penerima Beasiswa </td>
-					</tr>
-					<tr>
-					  <td> Nomor Telephone </td>
-					  <td> : </td>
-					  <td> 0812345678</td>
-					</tr>
-					<tr>
-					  <td> Alamat  </td>
-					  <td> : </td>
-					  <td> Jl.Dieng no.32</td>
-					</tr>					
-				  </table>						
-				</br>
-				<a href="Edit Profile.html"><button type="submit">Edit Profil</button></a>
-				</br>
-				<a href="Unggah Dokumen.html"><button type="submit">Unggah Dokumen</button></a>
-			</div>
-			<div class="col-md-6 col-sm-6 col-xs-12">			
-				<br/><h2><b>Daftar beasiswa yang diterima</b></h2><br/>		
-				<table border="1" cellspacing="5">
-					<tr>
-					  <td> No. </td><td> Nama Donatur</td><td> Jumlah Donasi</td><td>Tanggal Donasi</td>
-					</tr>
-					<tr>
-					  <td> 1 </td><td> Ahmad Hasan</td><td> Rp.300.000</td><td>01/01/2018</td>
-					</tr>		
-					<tr>
-					  <td> 2 </td><td> Ahmad Hasan</td><td> Rp.300.000</td><td>02/01/2018</td>
-					</tr>		
-					<tr>
-					  <td> 3 </td><td> Ahmad Hasan</td><td> Rp.300.000</td><td>03/01/2018</td>
-					</tr>		
-				  </table>			
-			</div>
-        </div>
-	</div>
 
+		<div class="team-wrapper">
+		<div class="container">
+		<div class="section-name one">
+			<h2>Edit Biodata Penerima Beasiswa</h2>
+		</div>
+			
+			<div class="team-members row">
+				<div class="col-md-3 col-sm-6 col-xs-12">	
+					<div class="single-member">
+						<div class="best-volunteer">
+							<div class="voluntee-image">
+								<a href="#" title=""><img src="assets/img/user.png" alt=""></a>
+							</div>
+							<h2>Jonathan Greg</h2>	
+							<p>Status: Sudah di Edit</p>	
+							<a href="#"><button type="submit">Pilih</button></a>
+						</div>					
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">	
+					<div class="single-member">
+						<div class="best-volunteer">
+							<div class="voluntee-image">
+								<a href="#" title=""><img src="assets/img/user.png" alt=""></a>
+							</div>
+							<h2>Jonathan Greg</h2>	
+							<p>Status</p>	
+							<a href="#"><button type="submit">Pilih</button></a>
+						</div>					
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">	
+					<div class="single-member">
+						<div class="best-volunteer">
+							<div class="voluntee-image">
+								<a href="#" title=""><img src="assets/img/user.png" alt=""></a>
+							</div>
+							<h2>Jonathan Greg</h2>		
+							<p>Status</p>	
+							<a href="#"><button type="submit">Pilih</button></a>
+						</div>					
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">	
+					<div class="single-member">
+						<div class="best-volunteer">
+							<div class="voluntee-image">
+								<a href="#" title=""><img src="assets/img/user.png" alt=""></a>
+							</div>
+							<h2>Jonathan Greg</h2>
+							<p>Status</p>	
+							<a href="#"><button type="submit">Pilih</button></a>
+						</div>					
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">	
+					<div class="single-member">
+						<div class="best-volunteer">
+							<div class="voluntee-image">
+								<a href="#" title=""><img src="assets/img/user.png" alt=""></a>
+							</div>
+							<h2>Jonathan Greg</h2>	
+							<p>Status: Belum di Edit</p>	
+							<a href="#"><button type="submit">Pilih</button></a>
+						</div>					
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">	
+					<div class="single-member">
+						<div class="best-volunteer">
+							<div class="voluntee-image">
+								<a href="#" title=""><img src="assets/img/user.png" alt=""></a>
+							</div>
+							<h2>Jonathan Greg</h2>		
+							<p>Status: Sudah di Edit</p>	
+							<a href="#"><button type="submit">Pilih</button></a>
+						</div>					
+					</div>
+				</div>
+				
+			</div>	
+		</div>	
+	</div>
+	
 	<!-- Foter -->
 	<footer>
 			<div class="footer-bar">
@@ -157,7 +177,6 @@
 			<h5>Copyright ©2018 Kelompok 3 RPL-F</h5>
 		</div>
 	</footer>
-
 	<!-- Scripts -->
 	<script type="text/javascript" src="assets/js/jquery2.min.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
@@ -173,12 +192,12 @@
 	<script type="text/javascript" src="assets/js/js.js"></script>
 	<script type="text/javascript">
 	function Konfirmasi() {
-		 var jawab = confirm("Apakah anda yakin untuk Logout?")
+		 var jawab = confirm("Anda yakin ingin keluar?")
 		 if (jawab){
-		  window.location.href="index.php?op=logout";
+		  header("index.php?op=logout");
 		 }
 		}		
-	</script>   
+	</script>    
 
 </body>
 </html>

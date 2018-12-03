@@ -1,8 +1,4 @@
-<?php
-	session_start();
-	if (!isset($_SESSION['user'])) header("Location:login.php");
-
-?>
+<?php?>
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
@@ -37,15 +33,18 @@
 			<div class="container">
 				<div class="row">
 					<div class="logo-wrap col-md-3 col-xs-6">
-						<a href="Mahasiswa index.html">BEVO</a>
+						<a href="BEVO index.html">BEVO</a>
 					</div>
 					<div class="menu-wrap col-md-8 ">
 						<ul class="menu">
 							<li>
-								<a href="Mahasiswa index.html" >Home</a>
+								<a href="BEVO index.html" >Home</a>
+							</li>
+							<li>
+								<a href="Pilih Calon Penerima.html">Donasi</a>
 							</li>
 							<li class="active">
-								<a href="Profile Mahasiswa.html">Profil</a>
+								<a href="Profile.html">Profil</a>
 							</li>
 							<li>
 								<a href="#" onclick="return Konfirmasi()">Logout</a>
@@ -53,8 +52,7 @@
 						</ul>	
 					</div>			        
 				</div>
-			</div>
-			
+			</div>			
 			<!--[ MOBILE-MENU-AREA START ]--> 
 			<div class="mobile-menu-area">
 				<div class="container">
@@ -64,8 +62,10 @@
 								<div class="mobile-menu">
 									<nav id="mobile-nav">
 										<ul>
-											<li><a href="Mahasiswa index.html">Home </a></li>
-											<li><a href="Profile Mahasiswa"> Profil </a></li>
+											<li><a href="BEVO index.html">Home </a></li>
+											<li><a href="Pilih Calon Penerima.html">Donasi</a>
+											</li>
+											<li><a href="#"> Profil </a></li>
 											<li><a href="#" onclick="return Konfirmasi()">Logout</a></li>
 										</ul>
 									</nav>
@@ -84,25 +84,25 @@
 	<div class="team-wrapper">
 		<div class="container">
 			<div class="section-name one">
-				<h2>Halaman Profile</h2>
+				<h2>Halaman Profil</h2>
 			</div>
 						
 			<div class="col-md-6 col-sm-6 col-xs-12">							    
 				<table>
 					<tr>
 					  <div class="imgcontainer">
-						  <img src="images/03122018093322birdmage" alt="Avatar" class="avatar">
+						  <img src="assets/img/user.png" alt="Avatar" class="avatar">
 						</div>
 					</tr>
 					<tr>
 					  <td> Nama </td>
 					  <td> : </td>
-					  <td> Ahsan </td>
+					  <td> Muhammad Ali</td>
 					</tr>
 					<tr>
 					  <td> Email </td>
 					  <td> : </td>
-					  <td> Ahsan@gmail.com </td>
+					  <td> MuhammadAli@GMAIL.COM </td>
 					</tr>
 					<tr>
 					  <td> Jenis Member </td>
@@ -117,28 +117,27 @@
 					<tr>
 					  <td> Alamat  </td>
 					  <td> : </td>
-					  <td> Jl.Dieng no.32</td>
+					  <td> Jl.Biji Cengkeh</td>
 					</tr>					
 				  </table>						
 				</br>
 				<a href="Edit Profile.html"><button type="submit">Edit Profil</button></a>
-				</br>
-				<a href="Unggah Dokumen.html"><button type="submit">Unggah Dokumen</button></a>
+				</br>				
 			</div>
 			<div class="col-md-6 col-sm-6 col-xs-12">			
-				<br/><h2><b>Daftar beasiswa yang diterima</b></h2><br/>		
-				<table border="1" cellspacing="5">
+				<br/><h2><b>Daftar beasiswa yang telah didonasikan</b></h2><br/>		
+				<table border="1">
 					<tr>
-					  <td> No. </td><td> Nama Donatur</td><td> Jumlah Donasi</td><td>Tanggal Donasi</td>
+					  <td> No. </td><td> Nama Penerima Beasiswa</td><td> Jumlah Donasi</td><td>Tanggal Donasi</td><td>Status</td>
 					</tr>
 					<tr>
-					  <td> 1 </td><td> Ahmad Hasan</td><td> Rp.300.000</td><td>01/01/2018</td>
+					  <td> 1 </td><td> Ahmad Ahsan</td><td> Rp.300.000</td><td>01/01/2018</td><td>Belum Di Transfer</td>
 					</tr>		
 					<tr>
-					  <td> 2 </td><td> Ahmad Hasan</td><td> Rp.300.000</td><td>02/01/2018</td>
+					  <td> 2 </td><td> Muhammad Andi</td><td> Rp.300.000</td><td>02/01/2018</td><td>Telah Di Verifikasi</td>
 					</tr>		
 					<tr>
-					  <td> 3 </td><td> Ahmad Hasan</td><td> Rp.300.000</td><td>03/01/2018</td>
+					  <td> 3 </td><td>Rahma indah </td><td> Rp.300.000</td><td>03/01/2018</td><td>Sudah Di Terima</td>
 					</tr>		
 				  </table>			
 			</div>
@@ -175,7 +174,7 @@
 	function Konfirmasi() {
 		 var jawab = confirm("Apakah anda yakin untuk Logout?")
 		 if (jawab){
-		  window.location.href="index.php?op=logout";
+		  window.location = "BEVO index.html";
 		 }
 		}		
 	</script>   

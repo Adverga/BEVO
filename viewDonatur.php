@@ -50,10 +50,10 @@ if (!isset($_SESSION['user'])) {
 								<a href="Pilih Calon Penerima.html">Donasi</a>
 							</li>
 							<li>
-								<a href="Profile.html">Profil</a>
+								<a href="viewProfilDonatur.php">Profil</a>
 							</li>
 							<li>
-								<a href="Login.html">Login</a>
+								<a href="#" onclick="return Konfirmasi()">Logout</a>
 							</li>
 						</ul>	
 					</div>
@@ -73,7 +73,7 @@ if (!isset($_SESSION['user'])) {
 											<li><a href="BEVO index.html">Home </a></li>
 											<li><a href="Pilih Calon Penerima.html">Donasi</a>
 											</li>
-											<li><a href="Profile.html"> Profil </a></li>
+											<li><a href="viewProfilDonatur.php"> Profil </a></li>
 											<li><a href="Login.html">Login</a></li>
 										</ul>
 									</nav>
