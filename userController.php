@@ -1,54 +1,51 @@
 <?php
-require_once 'koneksi.php';
 //require_once 'user.php';
 require_once 'modelUser.php';
 
 class UserController 
 {
-	$user;
-	function __construct()
-	{
-		$this->user = new User();
+	public $us;
+	public function UserController(){
+		$this->us = new user();
 	}
 	public function login($username, $password)
 	{
-		if ($username == $user->getIdUser($username)) {
-			# code...
-		}
-/*		if ($this->getAuth($username, $password)) {
+		if ($this->us->getAuth($username, $password)) {
 			session_start();
-			$user = new User($username, $this->getJenis($username));
-			$_SESSION['user'] = $user;
-			return true;
-		} else {
-			return false;
-		}*/
-	}
-	public function getAuth($user, $pass)
-	{
-		global $conn;
-		$val = false;
-		$sql = "SELECT * from user where username = '$user' and password = '$pass'";
-		$result = MYSQLI_QUERY($conn, $sql);
-		$row = mysqli_num_rows($result);
-		if ($row == 1) {
-			$val = true;
-		}
-		return $val;
+			$jenis = $this->us->getJenis($username);
+			$_SESSION['user'] = $username;
+			$_SESSION['jenis'] = $jenis;
+			if ($jenis == 'admin') {
+				header("Location:viewAdmin.php?id=admin");
+			}
+			if ($jenis == 'donatur') {
+				header("Location:viewDonatur.php?id=$username");
+			}
+			if ($jenis == 'Calon penerima beasiswa') {
+				header("Location:viewPenerima.php?id=$username");
+			}
+		}else header("Location:login.php?err=1");
 	}
 	public function logout()
 	{
 		session_start();
 		session_destroy();
 	}
-	public function getJenis($user){
+/*	public function getJenis($user){
 		global $conn;
 		$QUERY = MYSQLI_QUERY($conn,"SELECT * FROM user where username = '$user'");
  		$ROW = MYSQLI_FETCH_ASSOC($QUERY);
  		$tmp = $ROW["jenis"];
  		return $tmp;
-	}public function register($username,$email,$password,$nmrHP,$alamat,$foto,$jenis){
-		
+	}*/
+	public function register($username,$email,$password,$nmrHP,$alamat,$foto,$jenis){
+		if ($this->us->setRegister($username,$email,$password,$nmrHP,$alamat,$foto,$jenis)) 
+		{
+			return true;
+		}else
+		{
+			return false;
+		}
 	}
 }
 ?>

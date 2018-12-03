@@ -1,4 +1,6 @@
 <?php
+	session_start();
+	if (!isset($_SESSION['user'])) header("Location:login.php");
 
 ?>
 <!DOCTYPE html>
@@ -7,7 +9,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>BEVO: Register </title>
+	<title>BEVO: Halaman Profil </title>
 	<link rel="shortcut icon" href="assets/img/BEVO.png">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/owl-carousel/assets/owl.carousel.css">
@@ -35,21 +37,18 @@
 			<div class="container">
 				<div class="row">
 					<div class="logo-wrap col-md-3 col-xs-6">
-						<a href="Bevo index.html">BEVO</a>
+						<a href="Mahasiswa index.html">BEVO</a>
 					</div>
 					<div class="menu-wrap col-md-8 ">
 						<ul class="menu">
 							<li>
-								<a href="BEVO index.html" >Home</a>
-							</li>
-							<li>
-								<a href="Pilih Calon Penerima.html">Donasi</a>
-							</li>
-							<li>
-								<a href="Profile.html">Profil</a>
+								<a href="Mahasiswa index.html" >Home</a>
 							</li>
 							<li class="active">
-								<a href="Login.html">Login</a>
+								<a href="Profile Mahasiswa.html">Profil</a>
+							</li>
+							<li>
+								<a href="#" onclick="return Konfirmasi()">Logout</a>
 							</li>
 						</ul>	
 					</div>			        
@@ -65,10 +64,9 @@
 								<div class="mobile-menu">
 									<nav id="mobile-nav">
 										<ul>
-											<li><a href="BEVO index.html">Home </a></li>
-											<li><a href="Pilih Calon Penerima.html">Donasi</a></li>
-											<li><a href="Profile.html">Profil</a></li>
-											<li><a href="Login.html">Login</a></li>
+											<li><a href="Mahasiswa index.html">Home </a></li>
+											<li><a href="Profile Mahasiswa"> Profil </a></li>
+											<li><a href="#" onclick="return Konfirmasi()">Logout</a></li>
 										</ul>
 									</nav>
 								</div>	
@@ -81,58 +79,72 @@
 		</nav>
 
 	</header>
-
-	<h2 class=LoginText>Form Register </h2>
-
-	<form action="index.php" method="POST" enctype="multipart/form-data">
-	<div class="containerL">
-		<label><b>Username</b></label>
-		<input type="text" placeholder="Masukkan Username" name="uname" required 
-		oninvalid="this.setCustomValidity('data tidak boleh kosong')" oninput="setCustomValidity('')">
-		<br/>
-		<label><b>Email</b></label><br/>
-		<input type="text" placeholder="Masukkan Email" name="email" required 
-		oninvalid="this.setCustomValidity('data tidak boleh kosong')" oninput="setCustomValidity('')">
-		<br/>
-		<label><b>Password</b></label>
-		<input type="password" placeholder="Masukkan Password" name="psw" required
-		oninvalid="this.setCustomValidity('data tidak boleh kosong')" oninput="setCustomValidity('')">
-		<br/>
-		<label><b>Jenis Member</b></label>
-		<br />
-		<input type="radio" name="member" value="Donatur" required
-		oninvalid="this.setCustomValidity('data tidak boleh kosong')" oninput="setCustomValidity('')">
-		<label for="f-option">Donatur</label>
-		<br />
-		<input type="radio" name="member" value="Calon penerima beasiswa" required
-		oninvalid="this.setCustomValidity('data tidak boleh kosong')" oninput="setCustomValidity('')">
-		<label for="f-option">Calon penerima beasiswa</label>
-		<br /><br />
-		
-		<label><b>Nomor Telepon</b></label>
-		<input type="text" placeholder="Masukkan Nomor Telephone" name="notelp" required
-		oninvalid="this.setCustomValidity('data tidak boleh kosong')" oninput="setCustomValidity('')">
-		<br />
-		
-		<label><b>Alamat</b></label>
-		<textarea name="Alamat" style="resize: none; width:496px; height:130px;" required 
-		oninvalid="this.setCustomValidity('data tidak boleh kosong')" oninput="setCustomValidity('')">
-		</textarea>			
-		<br />
-		<label><b>Unggah Foto Profile</b></label>
-			<br />
-			<input type="file" name="unggahPP" required
-			oninvalid="this.setCustomValidity('data tidak boleh kosong')" oninput="setCustomValidity('')">
-			<br />	<br />	
-		<!--	<img id="gmbr" style="width:200px;height:200px" src="images/<?php echo $data['namaFile'] ?>" >		
-			<br /><br />-->
-		
-		<input type="submit" name="op" value="Register">
-		</div>
-	</form>
-	<br />
-
 	
+	<!-- about wrapper -->
+	<div class="team-wrapper">
+		<div class="container">
+			<div class="section-name one">
+				<h2>Halaman Profile</h2>
+			</div>
+						
+			<div class="col-md-6 col-sm-6 col-xs-12">							    
+				<table>
+					<tr>
+					  <div class="imgcontainer">
+						  <img src="assets/img/user.png" alt="Avatar" class="avatar">
+						</div>
+					</tr>
+					<tr>
+					  <td> Nama </td>
+					  <td> : </td>
+					  <td> Ahsan </td>
+					</tr>
+					<tr>
+					  <td> Email </td>
+					  <td> : </td>
+					  <td> Ahsan@gmail.com </td>
+					</tr>
+					<tr>
+					  <td> Jenis Member </td>
+					  <td> : </td>
+					  <td> Penerima Beasiswa </td>
+					</tr>
+					<tr>
+					  <td> Nomor Telephone </td>
+					  <td> : </td>
+					  <td> 0812345678</td>
+					</tr>
+					<tr>
+					  <td> Alamat  </td>
+					  <td> : </td>
+					  <td> Jl.Dieng no.32</td>
+					</tr>					
+				  </table>						
+				</br>
+				<a href="Edit Profile.html"><button type="submit">Edit Profil</button></a>
+				</br>
+				<a href="Unggah Dokumen.html"><button type="submit">Unggah Dokumen</button></a>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12">			
+				<br/><h2><b>Daftar beasiswa yang diterima</b></h2><br/>		
+				<table border="1" cellspacing="5">
+					<tr>
+					  <td> No. </td><td> Nama Donatur</td><td> Jumlah Donasi</td><td>Tanggal Donasi</td>
+					</tr>
+					<tr>
+					  <td> 1 </td><td> Ahmad Hasan</td><td> Rp.300.000</td><td>01/01/2018</td>
+					</tr>		
+					<tr>
+					  <td> 2 </td><td> Ahmad Hasan</td><td> Rp.300.000</td><td>02/01/2018</td>
+					</tr>		
+					<tr>
+					  <td> 3 </td><td> Ahmad Hasan</td><td> Rp.300.000</td><td>03/01/2018</td>
+					</tr>		
+				  </table>			
+			</div>
+        </div>
+	</div>
+
 	<!-- Foter -->
 	<footer>
 			<div class="footer-bar">
@@ -145,6 +157,7 @@
 			<h5>Copyright ©2018 Kelompok 3 RPL-F</h5>
 		</div>
 	</footer>
+
 	<!-- Scripts -->
 	<script type="text/javascript" src="assets/js/jquery2.min.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
@@ -158,6 +171,14 @@
 	<script type="text/javascript" src="assets/js/gmaps.js"></script>
 	<script type="text/javascript" src="assets/js/plugins.js"></script>
 	<script type="text/javascript" src="assets/js/js.js"></script>
+	<script type="text/javascript">
+	function Konfirmasi() {
+		 var jawab = confirm("Apakah anda yakin untuk Logout?")
+		 if (jawab){
+		  window.location.href="index.php?op=logout";
+		 }
+		}		
+	</script>   
 
 </body>
 </html>

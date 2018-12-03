@@ -1,17 +1,4 @@
 <?php
-	session_start();
-	session_destroy();
-	if (isset($_SESSION['user'])) {
-		if ($_SESSION['user']->jenis == 'admin') {
-			header("Location:viewAdmin.php");
-		}
-		else if ($_SESSION['user']->jenis == 'donatur') {
-			header("Location:viewDonatur.php");
-		}
-		else if ($_SESSION['user']->jenis == 'penerima'){
-			header("Location:viewPenerima.php");
-		}
-	}
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -99,7 +86,7 @@
 			<input type="text" placeholder="Masukkan Username" name="user" required>
 			<label><b>Password</b></label>
 			<input type="password" placeholder="Masukkan Password" name="pass" required>
-			<input type="submit" name="op" value="login"></a>	
+			<input type="submit" name="op" value="Login">	
 			<span class="psw">Belum punya akun <a href="register.php">Register</a></span>
 		</div>
 	</form>

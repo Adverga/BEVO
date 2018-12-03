@@ -1,9 +1,6 @@
 <?php
-require_once('user.php');
-session_start();
-if (!isset($_SESSION['user'])) {
-	header("Location:login.php")
-}
+	session_start();
+	if (!isset($_SESSION['user'])) header("Location:login.php");
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -44,10 +41,10 @@ if (!isset($_SESSION['user'])) {
 					<div class="menu-wrap col-md-8 ">
 						<ul class="menu">
 							<li class="active">
-								<a href="Mahasiswa index.html" >Home</a>
+								<a href="viewPenerima.php" >Home</a>
 							</li>
 							<li>
-								<a href="Profile Mahasiswa.html">Profil</a>
+								<a href="viewProfilPenerima.php">Profil</a>
 							</li>
 							<li>
 								<a href="#" onclick="return Konfirmasi()">Logout</a>
@@ -67,8 +64,8 @@ if (!isset($_SESSION['user'])) {
 								<div class="mobile-menu">
 									<nav id="mobile-nav">
 										<ul>
-											<li><a href="Mahasiswa index.html">Home </a></li>
-											<li><a href="Profile Mahasiswa.html"> Profil </a></li>
+											<li><a href="viewPenerima.php">Home </a></li>
+											<li><a href="viewProfilPenerima.php"> Profil </a></li>
 											<li><a href="index.php?op=logout" onclick="return Konfirmasi()">Logout</a></li>
 										</ul>
 									</nav>
@@ -93,7 +90,7 @@ if (!isset($_SESSION['user'])) {
 						<p class="b_faddown2">Bevo adalah sarana pendanaan yang akan menampung dana dari para volunteer yang akan ditujukan                                    
 						<br /><br />kepada mahasiswa  kurang mampu dan tidak bisa memenuhi persyaratan dalam mendaftar beasiswa. <br/>
 						Untuk melihat donasi dari para donatur , mengedit profile atau menggunggah dokumen dapat melihat di Profil</p>
-						<div class="slider_button b_faddown3"><a href="Profile Mahasiswa.html">Lihat Profil</a></div>
+						<div class="slider_button b_faddown3"><a href="viewProfilPenerima.php">Lihat Profil</a></div>
 					</div>
 				</div>				
 			</div>
@@ -104,7 +101,7 @@ if (!isset($_SESSION['user'])) {
 						<p class="b_faddown2">Bevo adalah sarana pendanaan yang akan menampung dana dari para volunteer yang akan ditujukan                                    
 						<br /><br />kepada mahasiswa  kurang mampu dan tidak bisa memenuhi persyaratan dalam mendaftar beasiswa. <br/>
 						Untuk melihat donasi dari para donatur , mengedit profile atau menggunggah dokumen dapat melihat di Profil</p>
-						<div class="slider_button b_faddown3"><a href="Profile Mahasiswa.html">Lihat Profil</a></div>
+						<div class="slider_button b_faddown3"><a href="viewProfilPenerima.php">Lihat Profil</a></div>
 					</div>
 				</div>				
 			</div>
@@ -116,7 +113,7 @@ if (!isset($_SESSION['user'])) {
 						<p class="b_faddown2">Bevo adalah sarana pendanaan yang akan menampung dana dari para volunteer yang akan ditujukan                                    
 						<br /><br />kepada mahasiswa  kurang mampu dan tidak bisa memenuhi persyaratan dalam mendaftar beasiswa. <br/>
 						Untuk melihat donasi dari para donatur , mengedit profile atau menggunggah dokumen dapat melihat di Profil</p>
-						<div class="slider_button b_faddown3"><a href="Profile Mahasiswa.html">Lihat Profil</a></div>
+						<div class="slider_button b_faddown3"><a href="viewProfilPenerima.php">Lihat Profil</a></div>
 				</div>				
 			</div>				
 		</div>
@@ -220,7 +217,7 @@ if (!isset($_SESSION['user'])) {
 		function Konfirmasi() {
 		 var jawab = confirm("Apakah anda yakin untuk Logout?")
 		 if (jawab){
-		  window.location = "index.php?op=logout";
+		  window.location.href="index.php?op=logout";
 		 }
 		}		
 		</script>       
