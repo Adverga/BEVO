@@ -21,7 +21,7 @@ class user
         global $conn;
         $q = $conn->query("SELECT Id FROM user where nama = '$username'");
         $data = mysqli_fetch_assoc($q);
-        return $data['nama'];
+        return $data['Id'];
     }
 
     public function getJenis($username) {

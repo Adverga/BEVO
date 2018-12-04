@@ -1,13 +1,13 @@
 <?php
 require_once('userController.php');
 require_once('modelUser.php');
-//require_once('controllerAdmin.php');
+require_once('controllerAdmin.php');
 //require_once('user.php');
 
 @$op = $_REQUEST['op'];
 
 $user_controller = new UserController();
-//$controllerAdmin = new controllerAdmin();
+$controllerAdmin = new controllerAdmin();
 switch($op){
 	case 'Login':
 		$username = $_POST['user'];
@@ -42,6 +42,7 @@ switch($op){
 		}else{
 			header("Location:register.php?err=foto Gagal diupload");
 		}
+	case 'pprofil':
 	default:
 		header("Location:Login.php");
 		break;

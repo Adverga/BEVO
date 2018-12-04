@@ -1,3 +1,5 @@
+<?php?>
+
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
@@ -32,15 +34,15 @@
 			<div class="container">
 				<div class="row">
 					<div class="logo-wrap col-md-3 col-xs-6">
-						<a href="viewPenerima.php">BEVO</a>
+						<a href="Mahasiswa index.html">BEVO</a>
 					</div>
 					<div class="menu-wrap col-md-8 ">
 						<ul class="menu">
 							<li>
-								<a href="viewPenerima.php" >Home</a>
+								<a href="Mahasiswa index.html" >Home</a>
 							</li>
 							<li class="active">
-								<a href="controllerPenerima.php?p=profil">Profil</a>
+								<a href="Profile Mahasiswa.html">Profil</a>
 							</li>
 							<li>
 								<a href="#" onclick="return Konfirmasi()">Logout</a>
@@ -60,7 +62,7 @@
 									<nav id="mobile-nav">
 										<ul>
 											<li><a href="Mahasiswa index.html">Home </a></li>
-											<li><a href="controllerPenerima.php?p=profil"> Profil </a></li>
+											<li><a href="Profile Mahasiswa"> Profil </a></li>
 											<li><a href="#" onclick="return Konfirmasi()">Logout</a></li>
 										</ul>
 									</nav>
@@ -338,7 +340,7 @@
 	function Konfirmasi() {
 		 var jawab = confirm("Anda yakin ingin keluar?")
 		 if (jawab){
-		  window.location.href="index.php?op=logout";
+		  window.location = "BEVO index.html";
 		 }
 		}		
 	</script>    

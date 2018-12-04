@@ -1,7 +1,8 @@
 <?php
 	session_start();
 	if (!isset($_SESSION['user'])) header("Location:login.php");
-
+	$data = $_SESSION['data1'];
+	$tab = $_SESSION['data2'];
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -42,10 +43,10 @@
 					<div class="menu-wrap col-md-8 ">
 						<ul class="menu">
 							<li>
-								<a href="Mahasiswa index.html" >Home</a>
+								<a href="viewPenerima.php" >Home</a>
 							</li>
 							<li class="active">
-								<a href="Profile Mahasiswa.html">Profil</a>
+								<a href="controllerPenerima.php?p=profil">Profil</a>
 							</li>
 							<li>
 								<a href="#" onclick="return Konfirmasi()">Logout</a>
@@ -64,8 +65,8 @@
 								<div class="mobile-menu">
 									<nav id="mobile-nav">
 										<ul>
-											<li><a href="Mahasiswa index.html">Home </a></li>
-											<li><a href="Profile Mahasiswa"> Profil </a></li>
+											<li><a href="viewPenerima.php">Home </a></li>
+											<li><a href="controllerPenerima.php?p=profil"> Profil </a></li>
 											<li><a href="#" onclick="return Konfirmasi()">Logout</a></li>
 										</ul>
 									</nav>
@@ -97,29 +98,30 @@
 					<tr>
 					  <td> Nama </td>
 					  <td> : </td>
-					  <td> Ahsan </td>
+					  <td> <?php echo $data['nama']; ?> </td>
 					</tr>
 					<tr>
 					  <td> Email </td>
 					  <td> : </td>
-					  <td> Ahsan@gmail.com </td>
+					  <td> <?php echo $data['nama']; ?> </td>
 					</tr>
 					<tr>
 					  <td> Jenis Member </td>
 					  <td> : </td>
-					  <td> Penerima Beasiswa </td>
+					  <td> <?php echo $data['nama']; ?> </td>
 					</tr>
 					<tr>
 					  <td> Nomor Telephone </td>
 					  <td> : </td>
-					  <td> 0812345678</td>
+					  <td> <?php echo $data['nama']; ?> </td>
 					</tr>
 					<tr>
 					  <td> Alamat  </td>
 					  <td> : </td>
-					  <td> Jl.Dieng no.32</td>
+					  <td> <?php echo $data['nama']; ?> </td>
 					</tr>					
-				  </table>						
+				  </table>
+				  <?php unset($_SESSION['data1']); ?>
 				</br>
 				<a href="Edit Profile.html"><button type="submit">Edit Profil</button></a>
 				</br>
@@ -131,16 +133,17 @@
 					<tr>
 					  <td> No. </td><td> Nama Donatur</td><td> Jumlah Donasi</td><td>Tanggal Donasi</td>
 					</tr>
-					<tr>
-					  <td> 1 </td><td> Ahmad Hasan</td><td> Rp.300.000</td><td>01/01/2018</td>
-					</tr>		
-					<tr>
-					  <td> 2 </td><td> Ahmad Hasan</td><td> Rp.300.000</td><td>02/01/2018</td>
-					</tr>		
-					<tr>
-					  <td> 3 </td><td> Ahmad Hasan</td><td> Rp.300.000</td><td>03/01/2018</td>
-					</tr>		
+					<?php 
+					$i=1;
+					foreach ($tab as $row) { ?>
+						<tr>
+							<td> <?php echo $i; ?></td>
+							<td> <?php echo $row['nama']; ?></td>
+							<td> <?php echo $row['jml']; ?></td>
+							<td> <?php echo $row['tgl']; } ?></td>
+						</tr>
 				  </table>			
+				  <?php unset($_SESSION['data2']); ?>
 			</div>
         </div>
 	</div>

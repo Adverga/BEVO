@@ -5,14 +5,17 @@ require_once 'modelUser.php';
 class UserController 
 {
 	public $us;
-	public function UserController(){
+	function __construct()
+	{
 		$this->us = new user();
 	}
 	public function login($username, $password)
 	{
 		if ($this->us->getAuth($username, $password)) {
 			session_start();
+			$id = $this->us->getIdUser($username);
 			$jenis = $this->us->getJenis($username);
+			$_SESSION['id'] = $id;
 			$_SESSION['user'] = $username;
 			$_SESSION['jenis'] = $jenis;
 			if ($jenis == 'admin') {
