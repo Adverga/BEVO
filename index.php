@@ -42,7 +42,7 @@ switch($op){
 		}else{
 			header("Location:register.php?err=foto Gagal diupload");
 		}
-	case 'pprofil':
+		break;
 	default:
 		header("Location:Login.php");
 		break;

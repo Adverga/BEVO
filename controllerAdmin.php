@@ -4,7 +4,7 @@ include_once 'modelAdmin.php';
 
 class ControllerAdmin
 {
-	$var1
+	public $var1;
 	function __construct($user)
 	{
 		global $conn;
@@ -13,7 +13,7 @@ class ControllerAdmin
 		$query = mysqli_query($conn, $sql);
 		$result = MYSQLI_FECTH_ASSOC($query);
 		$var1->setFotoPenerima($result['Foto']);
-		$var1->setNamaPenerima($result['username'])
+		$var1->setNamaPenerima($result['username']);
 	}
 	public function getFotoPenerima(){
 		

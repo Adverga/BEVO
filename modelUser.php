@@ -47,7 +47,7 @@ class user
         return $data;
     }
 
-//EditProfile
+    //EditProfile
     public function seteditProfile($username,$email,$nmrHP,$alamat,$foto,$jenis) {
         global $conn;
         $q = $conn->query("UPDATE user SET username='$username',email='$email',telepon= '$nmrHP', alamat= '$alamat',jenis='$jenis', foto='$foto' WHERE id_user= $id_user");
