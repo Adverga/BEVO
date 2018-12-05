@@ -47,9 +47,12 @@ switch ($p) {
 		$_SESSION['data2']=$cp->getDonasi($id);
 		header("Location:viewProfilPenerima.php");
 		break;
-	case 'unggah' :
+	case 'edit' :
 		session_start();
-		header("Location:viewUnggahDokumen.php")
+		$id = $_SESSION['id'];
+		$_SESSION['data']=$cp->getData($id);
+	case 'unggah' :
+		header("Location:viewUnggahDokumen.php");
 		break;
 	case 'Simpan' :
 		session_start();

@@ -1,8 +1,7 @@
 <?php
 	session_start();
 	if (!isset($_SESSION['user'])) header("Location:login.php");
-	$data = $_SESSION['data1'];
-	$tab = $_SESSION['data2'];
+	$data = $_SESSION['data'];
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -10,7 +9,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>BEVO: Halaman Profil </title>
+	<title>BEVO: Unggah Bukti Pembayaran </title>
 	<link rel="shortcut icon" href="assets/img/BEVO.png">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/owl-carousel/assets/owl.carousel.css">
@@ -38,15 +37,18 @@
 			<div class="container">
 				<div class="row">
 					<div class="logo-wrap col-md-3 col-xs-6">
-						<a href="Mahasiswa index.html">BEVO</a>
+						<a href="BEVO index.html">BEVO</a>
 					</div>
 					<div class="menu-wrap col-md-8 ">
 						<ul class="menu">
 							<li>
-								<a href="viewPenerima.php" >Home</a>
+								<a href="BEVO index.html" >Home</a>
 							</li>
 							<li class="active">
-								<a href="controllerPenerima.php?p=profil">Profil</a>
+								<a href="Pilih Calon Penerima.html">Donasi</a>
+							</li>
+							<li>
+								<a href="Profile.html">Profil</a>
 							</li>
 							<li>
 								<a href="#" onclick="return Konfirmasi()">Logout</a>
@@ -65,8 +67,10 @@
 								<div class="mobile-menu">
 									<nav id="mobile-nav">
 										<ul>
-											<li><a href="viewPenerima.php">Home </a></li>
-											<li><a href="controllerPenerima.php?p=profil"> Profil </a></li>
+											<li><a href="BEVO index.html">Home </a></li>
+											<li><a href="Pilih Calon Penerima.html">Donasi</a>
+											</li>
+											<li><a href="Profile.html"> Profil </a></li>
 											<li><a href="#" onclick="return Konfirmasi()">Logout</a></li>
 										</ul>
 									</nav>
@@ -80,75 +84,36 @@
 		</nav>
 
 	</header>
-	
-	<!-- about wrapper -->
+
 	<div class="team-wrapper">
 		<div class="container">
 			<div class="section-name one">
-				<h2>Halaman Profile</h2>
+				<h2>Unggah Bukti Pembayaran</h2>
 			</div>
-						
-			<div class="col-md-6 col-sm-6 col-xs-12">							    
-				<table>
-					<tr>
-					  <div class="imgcontainer">
-						  <img src="images/03122018093322birdmage" alt="Avatar" class="avatar">
-						</div>
-					</tr>
-					<tr>
-					  <td> Nama </td>
-					  <td> : </td>
-					  <td> <?php echo $data['nama']; ?> </td>
-					</tr>
-					<tr>
-					  <td> Email </td>
-					  <td> : </td>
-					  <td> <?php echo $data['email']; ?> </td>
-					</tr>
-					<tr>
-					  <td> Jenis Member </td>
-					  <td> : </td>
-					  <td> <?php echo $data['jenis']; ?> </td>
-					</tr>
-					<tr>
-					  <td> Nomor Telephone </td>
-					  <td> : </td>
-					  <td> <?php echo $data['telepon']; ?> </td>
-					</tr>
-					<tr>
-					  <td> Alamat  </td>
-					  <td> : </td>
-					  <td> <?php echo $data['alamat']; ?> </td>
-					</tr>					
-				  </table>
-				  <?php unset($_SESSION['data1']); ?>
-				</br>
-				<a href="controllerPenerima.php?p=edit"><button type="submit">Edit Profil</button></a>
-				</br>
-				<a href="controllerPenerima.php?p=unggah"><button type="submit">Unggah Dokumen</button></a>
+		<form action="controllerPenerima.php" method="POST">
+			<div class="col-md-6 col-sm-12 col-xs-12">
+				<label><b>Jumlah Transfer</b></label>
+				<input type="text" placeholder="Masukkan Jumlah yang ditransfer" name="jumlahtransfer" value="<?php echo $_SESSION['tmp']['jmlDonasi']?>" required>
 			</div>
-			<div class="col-md-6 col-sm-6 col-xs-12">			
-				<br/><h2><b>Daftar beasiswa yang diterima</b></h2><br/>		
-				<table border="1" cellspacing="5">
-					<tr>
-					  <td> No. </td><td> Nama Donatur</td><td> Jumlah Donasi</td><td>Tanggal Donasi</td>
-					</tr>
-					<?php 
-					$tab = $_SESSION['data2'];
-					for ($i=0; $i < count($tab) ; $i++) { 
-						foreach ($tab as $row) {?>
-						<tr>
-							<td> <?php echo $i; ?></td>
-							<td> <?php echo $row['nama']; ?></td>
-							<td> <?php echo $row['jml']; ?></td>
-							<td> <?php echo $row['tgl']; }} ?></td>
-						</tr>
-				  </table>			
-				  <?php unset($_SESSION['data2']); ?>
+			<div class="col-md-6 col-sm-12 col-xs-12">
+				<label><b>Unggah bukti Transfer</b></label>
+				<br />
+				<input type="file" name="ubt" required>
+				<br />
+				<img id="gmbr" style="width:360px;height:219px" src="../assets/img/<?php echo $data['namaFile'] ?>" >		
+				<br />			
+			</div>											
+			<div class="col-md-4 col-sm-3 col-xs-12">			
 			</div>
-        </div>
+			<div class="col-md-4 col-sm-6 col-xs-12">
+				<input type="submit" name="d" value="submit">
+<!--				</br>
+				<a href="BEVO index.html"><button type="submit">Unggah</button></a>-->
+			</div>
+        </form>
+    	</div>
 	</div>
-
+	
 	<!-- Foter -->
 	<footer>
 			<div class="footer-bar">
@@ -161,7 +126,6 @@
 			<h5>Copyright ©2018 Kelompok 3 RPL-F</h5>
 		</div>
 	</footer>
-
 	<!-- Scripts -->
 	<script type="text/javascript" src="assets/js/jquery2.min.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
@@ -179,10 +143,10 @@
 	function Konfirmasi() {
 		 var jawab = confirm("Apakah anda yakin untuk Logout?")
 		 if (jawab){
-		  window.location.href="index.php?op=logout";
+		  window.location = "index.php?op=logout";
 		 }
 		}		
-	</script>   
+	</script>      
 
 </body>
 </html>

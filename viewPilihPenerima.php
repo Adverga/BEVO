@@ -1,4 +1,13 @@
-<?php?>
+<?php
+	session_start();
+	if (!isset($_SESSION['user'])) header("Location:login.php");
+	$data = $_SESSION['data'];
+	$tmp = array();
+	for ($i=0; $i < count($data); $i++) { 
+		$tmp[$i] = $data['nama'];
+	}
+
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
@@ -92,9 +101,42 @@
 					<div class="single-member">
 						<div class="best-volunteer">
 							<div class="voluntee-image">
+								<a href="controllerDonatur.php?d=viewpd" title=""><img src="assets/img/user.png" alt=""></a>
+							</div>
+							<h2><a href="controllerDonatur.php?d=viewpd&i=0" title=""><?php echo $tmp[0]; ?></a></h2>
+							<a href="controllerDonatur.php?d=viewpd&i=0"><button type="submit">Lihat Profil</button></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">	
+					<div class="single-member">
+						<div class="best-volunteer">
+							<div class="voluntee-image">
+								<a href="controllerDonatur.php?d=viewpd" title=""><img src="assets/img/user.png" alt=""></a>
+							</div>
+							<h2><a href="controllerDonatur.php?d=viewpd&i=1" title=""><?php echo $tmp[1]; ?></a></h2>
+							<a href="controllerDonatur.php?d=viewpd&i=1"><button type="submit">Lihat Profil</button></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">	
+					<div class="single-member">
+						<div class="best-volunteer">
+							<div class="voluntee-image">
+								<a href="controllerDonatur.php?d=viewpd&i=2" title=""><img src="assets/img/user.png" alt=""></a>
+							</div>
+							<h2><a href="controllerDonatur.php?d=viewpd&i=2" title=""><?php echo $tmp[2]; ?></a></h2>
+							<a href="controllerDonatur.php?d=viewpd&i=2"><button type="submit">Lihat Profil</button></a>
+						</div>
+					</div>
+				</div>
+				<!--<div class="col-md-3 col-sm-6 col-xs-12">	
+					<div class="single-member">
+						<div class="best-volunteer">
+							<div class="voluntee-image">
 								<a href="Mahasiswa Dipilih.html" title=""><img src="assets/img/user.png" alt=""></a>
 							</div>
-							<h2><a href="Mahasiswa Dipilih.html" title="">Jonathan Greg</a></h2>
+							<h2><a href="Mahasiswa Dipilih.html" title=""></a></h2>
 							<a href="Mahasiswa Dipilih.html"><button type="submit">Lihat Profil</button></a>
 						</div>										
 					</div>
@@ -153,7 +195,7 @@
 							<a href="Mahasiswa Dipilih.html"><button type="submit">Lihat Profil</button></a>
 						</div>										
 					</div>
-				</div>
+				</div>-->
 			</div>	
 		</div>	
 	</div>
@@ -187,7 +229,7 @@
 	function Konfirmasi() {
 		 var jawab = confirm("Apakah anda yakin untuk Logout?")
 		 if (jawab){
-		  window.location = "BEVO index.html";
+		  window.location.href="index.php?op=logout";
 		 }
 		}		
 	</script>    

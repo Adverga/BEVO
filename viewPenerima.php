@@ -44,7 +44,7 @@
 								<a href="viewPenerima.php" >Home</a>
 							</li>
 							<li>
-								<a href="viewProfilPenerima.php">Profil</a>
+								<a href="controllerPenerima.php?p=profil">Profil</a>
 							</li>
 							<li>
 								<a href="#" onclick="return Konfirmasi()">Logout</a>
@@ -65,7 +65,7 @@
 									<nav id="mobile-nav">
 										<ul>
 											<li><a href="viewPenerima.php">Home </a></li>
-											<li><a href="viewProfilPenerima.php"> Profil </a></li>
+											<li><a href="controllerPenerima.php?p=profil"> Profil </a></li>
 											<li><a href="index.php?op=logout" onclick="return Konfirmasi()">Logout</a></li>
 										</ul>
 									</nav>
@@ -90,7 +90,7 @@
 						<p class="b_faddown2">Bevo adalah sarana pendanaan yang akan menampung dana dari para volunteer yang akan ditujukan                                    
 						<br /><br />kepada mahasiswa  kurang mampu dan tidak bisa memenuhi persyaratan dalam mendaftar beasiswa. <br/>
 						Untuk melihat donasi dari para donatur , mengedit profile atau menggunggah dokumen dapat melihat di Profil</p>
-						<div class="slider_button b_faddown3"><a href="viewProfilPenerima.php">Lihat Profil</a></div>
+						<div class="slider_button b_faddown3"><a href="controllerPenerima.php?p=profil">Lihat Profil</a></div>
 					</div>
 				</div>				
 			</div>
@@ -101,7 +101,7 @@
 						<p class="b_faddown2">Bevo adalah sarana pendanaan yang akan menampung dana dari para volunteer yang akan ditujukan                                    
 						<br /><br />kepada mahasiswa  kurang mampu dan tidak bisa memenuhi persyaratan dalam mendaftar beasiswa. <br/>
 						Untuk melihat donasi dari para donatur , mengedit profile atau menggunggah dokumen dapat melihat di Profil</p>
-						<div class="slider_button b_faddown3"><a href="viewProfilPenerima.php">Lihat Profil</a></div>
+						<div class="slider_button b_faddown3"><a href="controllerPenerima.php?p=profil">Lihat Profil</a></div>
 					</div>
 				</div>				
 			</div>
@@ -113,7 +113,7 @@
 						<p class="b_faddown2">Bevo adalah sarana pendanaan yang akan menampung dana dari para volunteer yang akan ditujukan                                    
 						<br /><br />kepada mahasiswa  kurang mampu dan tidak bisa memenuhi persyaratan dalam mendaftar beasiswa. <br/>
 						Untuk melihat donasi dari para donatur , mengedit profile atau menggunggah dokumen dapat melihat di Profil</p>
-						<div class="slider_button b_faddown3"><a href="viewProfilPenerima.php">Lihat Profil</a></div>
+						<div class="slider_button b_faddown3"><a href="controllerPenerima.php?p=profil">Lihat Profil</a></div>
 				</div>				
 			</div>				
 		</div>

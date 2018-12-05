@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user'])) {
-	header("Location:login.php")
+	header("Location:login.php");
 }
 ?>
 <!DOCTYPE html>
@@ -43,13 +43,13 @@ if (!isset($_SESSION['user'])) {
 					<div class="menu-wrap col-md-8 ">
 						<ul class="menu">
 							<li class="active">
-								<a href="BEVO index.html" >Home</a>
+								<a href="viewDonatur.php" >Home</a>
 							</li>
 							<li>
-								<a href="Pilih Calon Penerima.html">Donasi</a>
+								<a href="controllerDonatur.php?d=viewpp">Donasi</a>
 							</li>
 							<li>
-								<a href="viewProfilDonatur.php">Profil</a>
+								<a href="controllerDonatur.php?d=profil">Profil</a>
 							</li>
 							<li>
 								<a href="#" onclick="return Konfirmasi()">Logout</a>
@@ -69,11 +69,11 @@ if (!isset($_SESSION['user'])) {
 								<div class="mobile-menu">
 									<nav id="mobile-nav">
 										<ul>
-											<li><a href="BEVO index.html">Home </a></li>
-											<li><a href="Pilih Calon Penerima.html">Donasi</a>
+											<li><a href="viewDonatur">Home </a></li>
+											<li><a href="controllerDonatur.php?d=viewpp">Donasi</a>
 											</li>
-											<li><a href="viewProfilDonatur.php"> Profil </a></li>
-											<li><a href="Login.html">Login</a></li>
+											<li><a href="controllerDonatur.php?d=profil"> Profil </a></li>
+											<li><a href="#" onclick="return Konfirmasi()">Logout</a></li>
 										</ul>
 									</nav>
 								</div>	
@@ -96,7 +96,7 @@ if (!isset($_SESSION['user'])) {
 						<h2 class="b_faddown1 cd-headline clip is-full-width" >BEVO </h2>
 						<p class="b_faddown2">Bevo adalah sarana pendanaan yang akan menampung dana dari para volunteer yang akan ditujukan                                    
 						<br />kepada mahasiswa  kurang mampu dan tidak bisa memenuhi persyaratan dalam mendaftar beasiswa. </p>
-						<div class="slider_button b_faddown3"><a href="Pilih Calon Penerima.html">Donasi</a></div>
+						<div class="slider_button b_faddown3"><a href="controllerDonatur.php?d=viewpp">Donasi</a></div>
 					</div>
 				</div>				
 			</div>
@@ -106,7 +106,7 @@ if (!isset($_SESSION['user'])) {
 						<h2 class="b_faddown1 cd-headline clip is-full-width" >BEVO </h2>
 						<p class="b_faddown2">Bevo adalah sarana pendanaan yang akan menampung dana dari para volunteer yang akan ditujukan                                    
 						<br />kepada mahasiswa  kurang mampu dan tidak bisa memenuhi persyaratan dalam mendaftar beasiswa. </p>
-						<div class="slider_button b_faddown3"><a href="Pilih Calon Penerima.html">Donasi</a></div>
+						<div class="slider_button b_faddown3"><a href="controllerDonatur.php?d=viewpp">Donasi</a></div>
 					</div>
 				</div>				
 			</div>
@@ -117,7 +117,7 @@ if (!isset($_SESSION['user'])) {
 						<h2 class="b_faddown1 cd-headline clip is-full-width" >BEVO </h2>
 						<p class="b_faddown2">Bevo adalah sarana pendanaan yang akan menampung dana dari para volunteer yang akan ditujukan                                    
 						<br />kepada mahasiswa  kurang mampu dan tidak bisa memenuhi persyaratan dalam mendaftar beasiswa. </p>
-						<div class="slider_button b_faddown3"><a href="Pilih Calon Penerima.html">Donasi</a></div>
+						<div class="slider_button b_faddown3"><a href="controllerDonatur.php?d=viewpp">Donasi</a></div>
 					</div>
 				</div>				
 			</div>				

@@ -1,5 +1,8 @@
-<?php?>
-
+<?php
+	session_start();
+	if (!isset($_SESSION['user'])) header("Location:login.php");
+	$data = $_SESSION['data'];
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
@@ -39,13 +42,13 @@
 					<div class="menu-wrap col-md-8 ">
 						<ul class="menu">
 							<li>
-								<a href="BEVO index.html" >Home</a>
+								<a href="viewDonatur.php" >Home</a>
 							</li>
 							<li class="active">
-								<a href="Pilih Calon Penerima.html">Donasi</a>
+								<a href="viewPilihPenerima.php?p=viewpp">Donasi</a>
 							</li>
 							<li>
-								<a href="Profile.html">Profil</a>
+								<a href="controllerDonatur.php?d=profil">Profil</a>
 							</li>
 							<li>
 								<a href="#" onclick="return Konfirmasi()">Logout</a>
@@ -64,10 +67,10 @@
 								<div class="mobile-menu">
 									<nav id="mobile-nav">
 										<ul>
-											<li><a href="BEVO index.html">Home </a></li>
-											<li><a href="Pilih Calon Penerima.html">Donasi</a>
+											<li><a href="viewDonatur.php">Home </a></li>
+											<li><a href="viewPilihPenerima.php?p=viewpp">Donasi</a>
 											</li>
-											<li><a href="Profile.html"> Profil </a></li>
+											<li><a href="controllerDonatur.php?d=profil"> Profil </a></li>
 											<li><a href="#" onclick="return Konfirmasi()">Logout</a></li>
 										</ul>
 									</nav>
@@ -99,36 +102,36 @@
 					<tr>
 					  <td> Nama </td>
 					  <td> : </td>
-					  <td> Ahsan </td>
+					  <td> <?php echo $data['nama']; ?> </td>
 					</tr>
 					<tr>
 					  <td> Nim </td>
 					  <td> : </td>
-					  <td> 16515020012345 </td>
+					  <td> <?php echo $data['nim']; ?> </td>
 					</tr>
 					<tr>
 					  <td> PTN</td>
 					  <td> : </td>
-					  <td> Universitas Brawijaya </td>
+					  <td> <?php echo $data['ptn']; ?> </td>
 					</tr>
 					<tr>
 					  <td> Gaji Orang Tua perbulan</td>
 					  <td> : </td>
-					  <td> Rp.2.000.000,00 </td>
+					  <td> <?php echo $data['gaji']; ?> </td>
 					</tr>
 					<tr>
 					  <td> IPK </td>
 					  <td> : </td>
-					  <td> 2.8</td>
+					  <td> <?php echo $data['ipk']; ?> </td>
 					</tr>
 					<tr>
 					  <td> IP Terakhir  </td>
 					  <td> : </td>
-					  <td> 2.85</td>
+					  <td> <?php echo $data['ipkt']; ?> </td>
 					</tr>					
 				  </table>						
 				</br>
-				<a href="Donation.html"><button type="submit">Pilih Penerima Beasiswa</button></a>
+				<a href="controllerDonatur.php?d=donasi"><button type="submit">Pilih Penerima Beasiswa</button></a>
 			</div>
 			<div class="col-md-3 col-sm-3 hidden-xs"></div>
         </div>
@@ -164,7 +167,7 @@
 	function Konfirmasi() {
 		 var jawab = confirm("Apakah anda yakin untuk Logout?")
 		 if (jawab){
-		  window.location = "BEVO index.html";
+		  window.location.href="index.php?op=logout";
 		 }
 		}		
 	</script>   

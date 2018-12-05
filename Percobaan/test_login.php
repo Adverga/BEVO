@@ -1,15 +1,5 @@
 <?php
-//require_once 'user.php';
-require_once 'modelUser.php';
-
-class UserController 
-{
-	public $us;
-	function __construct()
-	{
-		$this->us = new user();
-	}
-	public function login($username, $password)
+public function login($username, $password)
 	{
 		if ($this->us->getAuth($username, $password)) {
 			session_start();
@@ -21,7 +11,7 @@ class UserController
 			if ($jenis == 'admin') {
 				header("Location:viewAdmin.php?id=admin");
 			}
-			if ($jenis == 'Donatur') {
+			if ($jenis == 'donatur') {
 				header("Location:viewDonatur.php?id=$username");
 			}
 			if ($jenis == 'Calon penerima beasiswa') {
@@ -29,19 +19,8 @@ class UserController
 			}
 		}else header("Location:login.php?err=1");
 	}
-	public function logout()
-	{
-		session_start();
-		session_destroy();
-	}
-	public function register($username,$email,$password,$nmrHP,$alamat,$foto,$jenis){
-		if ($this->us->setRegister($username,$email,$password,$nmrHP,$alamat,$foto,$jenis)) 
-		{
-			return true;
-		}else
-		{
-			return false;
-		}
-	}
-}
+
+
+
+
 ?>

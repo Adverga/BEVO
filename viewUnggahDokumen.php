@@ -82,7 +82,7 @@
 			<div class="section-name one">
 				<h2>Edit Biodata Penerima</h2>
 			</div>
-	
+	<form action="controllerPenerima.php" method="POST">
 			<div class="col-md-7 col-sm-12 col-xs-12">
 				<label><b>Unggah KTP</b></label>
 				<br />
@@ -306,8 +306,10 @@
 			</div>			
 			
 			<div class="col-md-4 col-sm-6 col-xs-12">
-				<a href="Profile Mahasiswa.html"><button type="submit">Simpan</button></a>
+			<input type="submit" name="p" value="Simpan">	
+<!--				<a href="Profile Mahasiswa.html"><button type="submit">Simpan</button></a>-->
 			</div>
+		</form>
 		</div>
 	</div>
 	
